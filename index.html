@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshaya ♡ Vignesh — Our Little Love Story</title>
+<meta name="description" content="A cute baby-pink interactive love story website.">
+
+<style>
+:root{
+  --pink:#ff8fbd;
+  --hot:#ff5fa3;
+  --soft:#ffd8e9;
+  --cream:#fff7fb;
+  --purple:#b58cff;
+  --text:#5a3150;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 20px 70px rgba(201,74,135,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Trebuchet MS","Segoe UI",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 10%,#ffd7e9 0,transparent 28%),
+    radial-gradient(circle at 90% 20%,#e9dcff 0,transparent 28%),
+    linear-gradient(135deg,#fff9fc,#fff0f7 48%,#f7efff);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  opacity:.18;
+  background-image:
+    radial-gradient(#fff 1px,transparent 1px),
+    radial-gradient(#ff80b6 1px,transparent 1px);
+  background-size:37px 37px,61px 61px;
+  background-position:0 0,20px 15px;
+}
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  padding:14px 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,248,252,.72);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,130,180,.18);
+}
+.logo{font-weight:900;color:#d94f8f;font-size:21px}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{text-decoration:none;color:#7b4a67;font-size:13px}
+.navlinks a:hover{color:var(--hot)}
+.hero{
+  min-height:100vh;padding:120px 7% 70px;display:grid;
+  place-items:center;text-align:center;position:relative;
+}
+.hero-inner{max-width:900px}
+.kicker{letter-spacing:5px;text-transform:uppercase;color:#d25b91;font-size:12px;font-weight:bold}
+h1{
+  font-size:clamp(52px,10vw,112px);line-height:.92;margin:18px 0;
+  color:#d94f8f;text-shadow:0 10px 30px rgba(255,100,160,.16);
+}
+.subtitle{font-size:18px;line-height:1.8;max-width:680px;margin:0 auto 24px;color:#70465f}
+.pill{
+  display:inline-block;padding:9px 16px;border-radius:999px;
+  background:#fff;border:1px solid #ffd0e2;box-shadow:var(--shadow);margin:5px;
+}
+.cta{
+  border:0;cursor:pointer;color:white;font-weight:bold;font-size:15px;
+  padding:15px 24px;border-radius:999px;
+  background:linear-gradient(135deg,#ff6eaa,#b98aff);
+  box-shadow:0 12px 35px rgba(255,100,170,.3);transition:.25s;
+}
+.cta:hover{transform:translateY(-4px) scale(1.03)}
+.section{padding:95px 7%;position:relative}
+.title{text-align:center;margin-bottom:48px}
+.title small{letter-spacing:4px;color:#d25b91;font-weight:bold}
+.title h2{font-size:clamp(34px,5vw,58px);margin-top:10px;color:#6d3c58}
+.container{max-width:1120px;margin:auto}
+.story-card,.letter,.future,.locked,.gallery-card{
+  background:var(--glass);border:1px solid rgba(255,150,195,.28);
+  backdrop-filter:blur(15px);box-shadow:var(--shadow);border-radius:30px;
+}
+.story-card{padding:34px;margin-bottom:24px;position:relative;overflow:hidden}
+.story-card:after{
+  content:"♡";position:absolute;right:20px;top:10px;font-size:100px;
+  color:rgba(255,120,175,.08);transform:rotate(-15deg)
+}
+.chapter{display:flex;gap:20px;align-items:flex-start}
+.num{
+  min-width:58px;height:58px;border-radius:20px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#ff9fc7,#c49cff);color:#fff;font-weight:900;
+  box-shadow:0 10px 25px rgba(255,110,170,.2)
+}
+.story-card h3{font-size:25px;color:#c34e88;margin-bottom:8px}
+.story-card p{line-height:1.9;color:#71485f;position:relative;z-index:2}
+.date{font-size:12px;color:#c05a8d;font-weight:bold;margin-bottom:8px}
+.quote{
+  margin-top:18px;padding:16px 18px;border-left:4px solid #ff8fbd;
+  background:#fff5fa;border-radius:0 18px 18px 0;font-style:italic
+}
+.timeline{position:relative;max-width:900px;margin:auto}
+.timeline:before{
+  content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;
+  background:linear-gradient(#ffc1dc,#d4b6ff,#ffc1dc);transform:translateX(-50%)
+}
+.titem{width:50%;padding:16px 30px;position:relative}
+.titem:nth-child(even){margin-left:50%}
+.titem:before{
+  content:"";position:absolute;top:28px;width:15px;height:15px;border-radius:50%;
+  background:#ff78b2;box-shadow:0 0 0 7px #ffe0ed,0 0 20px #ff78b2
+}
+.titem:nth-child(odd):before{right:-7px}
+.titem:nth-child(even):before{left:-7px}
+.tbox{padding:22px;border-radius:24px;background:#fff;border:1px solid #ffd5e5;box-shadow:0 12px 35px rgba(200,90,140,.1)}
+.tbox h3{color:#c34e88;margin-bottom:7px}
+.tbox p{line-height:1.7}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.gallery-card{padding:14px}
+.gallery-card img{width:100%;display:block;border-radius:22px;aspect-ratio:4/5;object-fit:cover}
+.caption{padding:15px 8px 6px;text-align:center}
+.letter{padding:45px;max-width:900px;margin:auto;text-align:center}
+.letter h3{font-size:31px;color:#c34e88;margin-bottom:25px}
+.letter p{font-size:18px;line-height:2;color:#71485f;white-space:pre-line}
+.signature{margin-top:24px;color:#c34e88;font-weight:bold;font-size:18px}
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.memory{
+  padding:28px;text-align:center;background:#fff;border-radius:25px;
+  border:1px solid #ffd5e5;box-shadow:var(--shadow);transition:.3s
+}
+.memory:hover{transform:translateY(-8px) rotate(-1deg)}
+.memory .emoji{font-size:42px;margin-bottom:10px}
+.memory h3{color:#c34e88;margin-bottom:8px}
+.memory p{line-height:1.7}
+.future{padding:42px;text-align:center}
+.future h3{font-size:30px;color:#c34e88;margin-bottom:20px}
+.future p{line-height:1.9}
+.locked{padding:40px;text-align:center;max-width:700px;margin:auto}
+.locked .lock{font-size:55px;margin-bottom:10px}
+.secret{
+  display:none;margin-top:25px;padding:25px;background:#fff4fa;border-radius:22px;
+  line-height:1.9;border:1px dashed #ff9bc4
+}
+.secret.show{display:block}
+.music{
+  position:fixed;right:22px;bottom:22px;z-index:1200;
+  width:55px;height:55px;border:0;border-radius:50%;cursor:pointer;
+  background:linear-gradient(135deg,#ff7db4,#b38cff);color:#fff;font-size:22px;
+  box-shadow:0 10px 30px rgba(180,100,170,.3)
+}
+.heart,.petal,.spark{position:fixed;pointer-events:none;z-index:1100}
+.heart{bottom:-40px;animation:rise 7s linear forwards}
+@keyframes rise{
+  0%{opacity:0;transform:translateY(0) translateX(0) rotate(0)}
+  10%{opacity:1}
+  100%{opacity:0;transform:translateY(-115vh) translateX(var(--x)) rotate(360deg)}
+}
+.petal{top:-40px;animation:fall 8s linear forwards}
+@keyframes fall{
+  to{transform:translateY(110vh) translateX(140px) rotate(720deg);opacity:.1}
+}
+.spark{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 12px #ff70b2;animation:fade .7s forwards}
+@keyframes fade{to{opacity:0;transform:scale(0) translateY(-25px)}}
+
+.music-panel{
+  position:fixed;right:22px;bottom:88px;z-index:1200;width:min(360px,calc(100vw - 44px));
+  background:rgba(255,248,252,.96);backdrop-filter:blur(18px);
+  border:1px solid #ffd0e2;border-radius:24px;padding:14px;
+  box-shadow:0 20px 70px rgba(150,60,110,.25);
+  display:none;
+}
+.music-panel.show{display:block;animation:pop .25s ease}
+.music-head{display:flex;justify-content:space-between;align-items:center;
+  color:#c34e88;font-weight:bold;padding:4px 5px 12px}
+.music-head button{border:0;background:#ffe3ef;color:#c34e88;border-radius:50%;
+  width:28px;height:28px;cursor:pointer;font-size:18px}
+.youtube-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:17px}
+.youtube-wrap iframe{width:100%;height:100%;border:0}
+.music-panel p{text-align:center;margin:10px 0 2px;color:#8b5c74;font-size:13px}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+
+.popup{
+  position:fixed;inset:0;background:rgba(70,25,55,.35);backdrop-filter:blur(10px);
+  display:none;place-items:center;z-index:3000;padding:20px
+}
+.popup.show{display:grid}
+.popbox{max-width:600px;background:#fff8fc;border:2px solid #ffd0e2;border-radius:30px;padding:40px;text-align:center;box-shadow:0 30px 100px rgba(80,30,60,.25)}
+.popbox h2{color:#c34e88;margin-bottom:16px;font-size:35px}
+.popbox p{line-height:1.8;margin-bottom:22px}
+footer{text-align:center;padding:70px 20px;color:#9a6b82}
+.anime{
+  max-width:950px;margin:0 auto 30px;padding:20px;
+  border-radius:35px;background:linear-gradient(135deg,#ffd8e8,#eee2ff);
+  box-shadow:var(--shadow);overflow:hidden
+}
+.anime img{width:100%;max-height:520px;object-fit:cover;border-radius:25px;display:block}
+.breath{animation:breath 3s ease-in-out infinite}
+@keyframes breath{50%{transform:scale(1.015)}}
+@media(max-width:800px){
+  .navlinks{display:none}
+  .gallery,.memory-grid{grid-template-columns:1fr}
+  .timeline:before{left:8px}
+  .titem,.titem:nth-child(even){width:100%;margin-left:0;padding-left:35px}
+  .titem:nth-child(odd):before,.titem:nth-child(even):before{left:1px;right:auto}
+  .letter{padding:28px 20px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">♡ Akshaya × Vignesh</div>
+  <div class="navlinks">
+    <a href="#beginning">Beginning</a>
+    <a href="#chapters">Chapters</a>
+    <a href="#memories">Memories</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#letter">Letter</a>
+    <a href="#future">Future</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">✦ a tiny universe made for two ✦</div>
+    <h1>Our Little<br>Love Story</h1>
+    <p class="subtitle">
+      <span class="pill">Akshaya 🌸</span>
+      <span class="pill">Vignesh 🐻</span>
+      <span class="pill">♡</span>
+      <br><br>
+      From one long ISRO training day to all the little memories
+      that came after it — this is our story, one chapter at a time.
+    </p>
+    <button class="cta" onclick="document.getElementById('beginning').scrollIntoView()">💗 Start Our Story</button>
+  </div>
+</header>
+
+<section class="section" id="beginning">
+  <div class="title">
+    <small>CHAPTER ZERO</small>
+    <h2>Where It All Began 🌸</h2>
+  </div>
+
+  <div class="container">
+    <div class="anime breath">
+      <img src="images/couple1.jpg" alt="Cute couple illustration">
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">01</div>
+        <div>
+          <div class="date">15 FEBRUARY 2026 · SUNDAY</div>
+          <h3>The ISRO Training Day</h3>
+          <p>
+            It started with a one-day ISRO training. We were both in black,
+            it was a long day, and there were only tiny moments of eye contact.
+            Nothing looked like a big beginning at the time — but somehow,
+            that day became the first page of our story.
+          </p>
+          <div class="quote">“Sometimes a whole story begins with one small look.” ♡</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">02</div>
+        <div>
+          <div class="date">THE FIRST LITTLE CONVERSATIONS</div>
+          <h3>“Can I Get a Charger?” 🔌</h3>
+          <p>
+            Our first conversation began with something as simple as asking
+            for a charger. Later came the Instagram messages — good morning,
+            good night, talking about college days, marks, exams, and all the
+            ordinary things that slowly started feeling special.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="chapters">
+  <div class="title">
+    <small>OUR STORY</small>
+    <h2>Every Little Chapter 💕</h2>
+  </div>
+
+  <div class="container">
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">03</div>
+        <div>
+          <h3>The Beginning of Our Friendship 💬</h3>
+          <p>
+            I started asking about the sad Instagram notes he posted.
+            He replied in his own cute, nose-cut way. Then came more good
+            mornings, good nights, questions about college, replies to notes,
+            and those tiny conversations that slowly became part of our days.
+          </p>
+          <div class="quote">
+            I didn't know then that these ordinary messages would become
+            some of my favourite memories.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">04</div>
+        <div>
+          <h3>The “For Whom?” Note Moment 👀</h3>
+          <p>
+            One day, he put an Instagram note and I asked, “For whom did you
+            put the note?” Then he asked me the same question. I had also put
+            a note and said I put it for someone to see. He simply said “ok.”
+            I asked why he didn't ask who, and he replied that it was my
+            personal matter. I got a little upset and told him he could ask
+            me anything. His “ohhh like that” reply became one of those tiny
+            moments I still remember.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">05</div>
+        <div>
+          <h3>The Crush That Became Something More 🦋</h3>
+          <p>
+            I already had a crush on him from first year, first semester.
+            After the ISRO training in second semester, I started liking him
+            even more. I would blush, smile like crazy, and feel butterflies
+            whenever I saw him. It was such a beautiful feeling.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">06</div>
+        <div>
+          <div class="date">03 MARCH 2026</div>
+          <h3>The Day We Said It 💌</h3>
+          <p>
+            By then our normal conversations had slowly grown into something
+            more. When I heard that a girl from his class liked him, I became
+            scared and wondered what would happen if someone proposed to him.
+            So I asked him about it on Instagram. He said, “Let's see when it
+            comes.” That made me even more nervous.
+            <br><br>
+            Finally I told him that I wanted to ask something — that I liked
+            him, but didn't know whether he liked me too. Then came the words
+            I had been hoping for: he told me he loved me too. When I asked
+            what he meant, he made it clear — he loved me too. 🌹
+            <br><br>
+            For a few minutes, I couldn't believe I was actually committed to
+            Vignesh. We both felt happy, emotional, and completely surprised
+            by how beautifully that moment turned out.
+          </p>
+          <div class="quote">03.03.2026 — The beginning of our love story. ♡</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">07</div>
+        <div>
+          <div class="date">27 MARCH 2026</div>
+          <h3>Our First Cheek Kiss 🌷</h3>
+          <p>
+            On college day, after the morning competition, we ate fried rice
+            together. He fed me, then gave me a cheek kiss — and I kissed his
+            cheek too. A simple little moment that became one of our most
+            special dates.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">08</div>
+        <div>
+          <h3>The Silly Fights 😂💗</h3>
+          <p>
+            Sometimes I start silly little fights for silly reasons. Somehow,
+            instead of staying angry, they turn into cute conversations,
+            understanding, and making up. Even our small disagreements became
+            part of learning each other better.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="chapter">
+        <div class="num">09</div>
+        <div>
+          <h3>The Moments That Made Me Feel Cared For 🥹</h3>
+          <p>
+            The moments when he worried about me, stood up for me, cared for
+            me when I was upset, and treated me with so much gentleness are
+            some of the memories I treasure most. Those little acts of care
+            made the relationship feel safe, warm, and meaningful.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="title">
+    <small>OUR TIMELINE</small>
+    <h2>Special Dates ✨</h2>
+  </div>
+
+  <div class="timeline container">
+    <div class="titem">
+      <div class="tbox">
+        <h3>15 Feb 2026 🌸</h3>
+        <p>First meeting — the ISRO one-day training.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="tbox">
+        <h3>03 Mar 2026 💗</h3>
+        <p>The beginning of our love story.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="tbox">
+        <h3>27 Mar 2026 🌷</h3>
+        <p>Our first cheek kiss.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="tbox">
+        <h3>19 May 2026 💕</h3>
+        <p>A special first kiss memory.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="tbox">
+        <h3>22 May 2026 🍜</h3>
+        <p>A special day, a kiss, then going out to eat together — plus precious first-call memories.</p>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="tbox">
+        <h3>27 Aug 2026 🌿</h3>
+        <p>Our day out to Thiruvananthapuram — just you and me, making a memory away from everyone else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="memories">
+  <div class="title">
+    <small>LITTLE FIRSTS</small>
+    <h2>Memories I Want to Keep 💞</h2>
+  </div>
+
+  <div class="memory-grid container">
+    <div class="memory"><div class="emoji">🫂</div><h3>First Hug</h3><p>One of the little firsts that became a forever memory.</p></div>
+    <div class="memory"><div class="emoji">💗</div><h3>First Kiss</h3><p>A special chapter in our story.</p></div>
+    <div class="memory"><div class="emoji">🤝</div><h3>First Hand Hold</h3><p>That tiny moment that somehow felt huge.</p></div>
+    <div class="memory"><div class="emoji">🍚</div><h3>First Feeding</h3><p>The fried-rice memory that became extra special.</p></div>
+    <div class="memory"><div class="emoji">🌿</div><h3>Thiruvananthapuram</h3><p>You and me, going together and making a memory of our own.</p></div>
+    <div class="memory"><div class="emoji">📱</div><h3>First Calls</h3><p>From messages to calls and video calls — another little chapter.</p></div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="title">
+    <small>OUR LITTLE GALLERY</small>
+    <h2>Two Cute Pages From Our Story 📸</h2>
+  </div>
+
+  <div class="gallery container">
+    <div class="gallery-card">
+      <img src="images/couple1.jpg" alt="Cute bear couple illustration">
+      <div class="caption">♡ A tiny cute version of us ♡</div>
+    </div>
+    <div class="gallery-card">
+      <img src="images/couple2.jpg" alt="Cute bear couple under a sunset sky">
+      <div class="caption">🌅 Under a beautiful sky, side by side</div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:22px;color:#95627b">
+    You can add more photos later by putting them in the <b>images</b> folder and adding another gallery card.
+  </p>
+</section>
+
+<section class="section">
+  <div class="title">
+    <small>THE THINGS I LOVE</small>
+    <h2>My Cutie Pie 🐻💗</h2>
+  </div>
+
+  <div class="container">
+    <div class="memory-grid">
+      <div class="memory"><div class="emoji">🎀</div><h3>That Cute Voice</h3><p>Your cute voice is one of those little things I could listen to for a long time.</p></div>
+      <div class="memory"><div class="emoji">🌷</div><h3>Maturity + Childishness</h3><p>The mix of maturity and childish behaviour makes you uniquely you.</p></div>
+      <div class="memory"><div class="emoji">✨</div><h3>Your Look</h3><p>Handsome, decent, and somehow always my cutie pie.</p></div>
+      <div class="memory"><div class="emoji">🫶</div><h3>Your Caring Side</h3><p>The caring boyfriend who notices little things and makes me feel looked after.</p></div>
+      <div class="memory"><div class="emoji">🐻</div><h3>Your Cute Possessive Side</h3><p>When you get a little possessive or annoyed, you somehow look extra cute to me.</p></div>
+      <div class="memory"><div class="emoji">🌸</div><h3>Just You</h3><p>All those little things together are what make you my favourite person.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="title">
+    <small>FROM PUCHA KUTTY</small>
+    <h2>A Letter For My Cutie Pie 💌</h2>
+  </div>
+
+  <div class="letter">
+    <h3>My Cutie Pie Mama,</h3>
+    <p>Naathan un chella pucha ena panurae da mama.
+Cutie mama, una konjitae iruganum pola irukuthu mama.
+Apdiyae hug pani kiss pani apdiyae iruganum polyae iruku da mama.
+
+Sikram marriage panuvom seriya mama.
+Aprm everyday jolly than namaku.
+Aprm kutty kutty sanda potutu atha samathan padithitu
+jolly ah life ah enjoy panuvom seriya da mama.
+
+Aprm long drive polam, neraiya trip pola,
+senthu work panalam, aprm late night drive polam,
+aprm movies pagalm n8 vidiyae vidiyae ok va mama.
+
+Love you mama.
+Ummah ummah ummah ummah ummah 😽😽😽</p>
+    <div class="signature">
+      Yours lovingly,<br>
+      Pucha Kutty Akshaya 😽
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="title">
+    <small>LOCKED CHAPTER</small>
+    <h2>A Secret Just For You 🔐</h2>
+  </div>
+
+  <div class="locked container">
+    <div class="lock">🔐💗</div>
+    <p>There is a tiny hidden message here. Only someone who clicks the heart gets to read it.</p>
+    <br>
+    <button class="cta" onclick="toggleSecret()">💗 Unlock My Secret</button>
+    <div class="secret" id="secret">
+      Love you mama. Una vittutu naa pogave maten da.
+      Nee enakku romba pudicha person. Nee enakku romba important.
+      Eppovumae un koodavae irukanum nu aasai.
+      Namma rendu perum serndhu neraiya cute memories create pannalaam.
+      Love you mama — ummah ummah ummah 💗😘
+    </div>
+  </div>
+</section>
+
+<section class="section" id="future">
+  <div class="title">
+    <small>THE CHAPTERS AHEAD</small>
+    <h2>Our Future Dreams 🌸</h2>
+  </div>
+
+  <div class="future container">
+    <h3>More Love. More Memories. More Us. ♡</h3>
+    <p>
+      Loving each other more, building a future with lots of effort,
+      growing together, travelling together, working together,
+      going on long drives, watching movies, making our own little
+      traditions, and one day creating a warm family filled with love,
+      laughter, good values, and happy memories.
+      <br><br>
+      The future chapter is still blank — and that's the beautiful part.
+      We get to write it slowly, one memory at a time. ✨
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="title">
+    <small>ONE LAST SURPRISE</small>
+    <h2>Click The Heart 💗</h2>
+  </div>
+  <div style="text-align:center">
+    <button class="cta" onclick="openPopup()">💗 Our Story Isn't Finished</button>
+  </div>
+</section>
+
+<footer>
+  Made with lots of pink sparkles, tiny hearts and memories ♡<br>
+  Akshaya × Vignesh · 2026
+</footer>
+
+<button class="music" id="musicBtn" onclick="toggleMusicPanel()">🎵</button>
+
+<div class="music-panel" id="musicPanel">
+  <div class="music-head">
+    <span>🎶 Our song</span>
+    <button onclick="toggleMusicPanel()">×</button>
+  </div>
+  <div class="youtube-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/TkK5fwk5uRU"
+      title="Our song"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p>Tap ▶️ to play our song 💗</p>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popbox">
+    <h2>🌸 One More Thing...</h2>
+    <p>
+      From the first ISRO training day to every little conversation,
+      every laugh, every first, every trip, and every memory —
+      this website is only a small collection of the story.
+      <br><br>
+      There are still so many chapters left to write. 💗
+      <br><br>
+      <b>Keep this little corner of our story forever. ✨</b>
+    </p>
+    <button class="cta" onclick="closePopup()">♡ Close</button>
+  </div>
+</div>
+
+<script>
+function toggleMusicPanel(){
+  document.getElementById("musicPanel").classList.toggle("show");
+}
+function toggleSecret(){
+  document.getElementById("secret").classList.toggle("show");
+  burstHearts(16);
+}
+
+function openPopup(){
+  document.getElementById("popup").classList.add("show");
+  burstHearts(30);
+}
+function closePopup(){
+  document.getElementById("popup").classList.remove("show");
+}
+
+function burstHearts(n){
+  for(let i=0;i<n;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent=["💗","💕","💖","♡","✨"][Math.floor(Math.random()*5)];
+    h.style.left=(Math.random()*100)+"vw";
+    h.style.fontSize=(14+Math.random()*25)+"px";
+    h.style.setProperty("--x",(-120+Math.random()*240)+"px");
+    h.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),8500);
+  }
+}
+setInterval(()=>burstHearts(1),900);
+
+function createPetal(){
+  const p=document.createElement("div");
+  p.className="petal";
+  p.textContent=["🌸","🌷","✿"][Math.floor(Math.random()*3)];
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(12+Math.random()*15)+"px";
+  p.style.animationDuration=(6+Math.random()*6)+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),13000);
+}
+setInterval(createPetal,850);
+
+document.addEventListener("mousemove",e=>{
+  if(Math.random()>.45)return;
+  const s=document.createElement("div");
+  s.className="spark";
+  s.style.left=e.clientX+"px";
+  s.style.top=e.clientY+"px";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),700);
+});
+
+document.addEventListener("click",e=>{
+  for(let i=0;i<3;i++){
+    const s=document.createElement("div");
+    s.className="spark";
+    s.style.left=(e.clientX+Math.random()*25-12)+"px";
+    s.style.top=(e.clientY+Math.random()*25-12)+"px";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),700);
+  }
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closePopup();
+});
+</script>
+
+</body>
+</html>
